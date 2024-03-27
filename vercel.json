@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js", // Specify the entry point of your application
+      "use": "@vercel/node" // Use the Node.js builder
+    }
+  ],
+  "routes": [
+    {
+      "src": "/quiz1", // Route for accessing the quiz1 endpoint
+      "dest": "/index.js" // Destination file for the route
+    },
+    // Add more routes if necessary
+  ]
+}

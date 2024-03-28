@@ -61,8 +61,8 @@ client.connect()
   }
 });
 
-app.get('https://my-postgres-server.vercel.app/quiz1', allowCors(getQuizData));
-app.post('https://my-postgres-server.vercel.app/data', allowCors(postData));
+app.get('/quiz1', allowCors(getQuizData));
+app.post('/data', allowCors(postData));
 
 const PORT = process.env.PORT || 8300;
 app.listen(PORT, () => {

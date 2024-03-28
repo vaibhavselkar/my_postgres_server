@@ -38,9 +38,7 @@ client.connect()
   app.post('/data', async (req, res) => {
   try {
     const { name, score } = req.body;
-    const client = await pool.connect();
     const result = await client.query('INSERT INTO login (name, score) VALUES ($1, $2)', [name, score]);
-    client.release();
     res.status(201).send('Data inserted successfully');
   } catch (err) {
     console.error('Error executing query', err);

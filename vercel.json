@@ -10,10 +10,6 @@
     {
       "src": "/quiz1",
       "dest": "/index.js"
-    },
-    { 
-      "src": "/data",
-      "dest": "/index.js"
     }
   ]
 }

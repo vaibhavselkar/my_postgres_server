@@ -23,22 +23,7 @@ client.connect()
     console.error("Error connecting to PostgreSQL", err);
   });
 
-  const allowCors = fn => async (req, res) => {
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-    res.setHeader(
-      'Access-Control-Allow-Headers',
-      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-    );
-    if (req.method === 'OPTIONS') {
-      res.status(200).end();
-      return;
-    }
-    return await fn(req, res);
-  };
-
-  const getQuizData = async (req, res) => {
+   app.get('/quiz1', async (req, res) => {
     try {
       const query = 'SELECT * FROM quiz1';
       const result = await client.query(query);
@@ -50,7 +35,7 @@ client.connect()
     }
   });
 
-  const postData = async (req, res) => {
+  app.post('/data', async (req, res) => {
   try {
     const { name, score } = req.body;
     const result = await client.query('INSERT INTO login (name, score) VALUES ($1, $2)', [name, score]);
@@ -60,9 +45,6 @@ client.connect()
     res.status(500).send('Error inserting data');
   }
 });
-
-app.get('/quiz1', allowCors(getQuizData));
-app.post('/data', allowCors(postData));
 
 const PORT = process.env.PORT || 8300;
 app.listen(PORT, () => {

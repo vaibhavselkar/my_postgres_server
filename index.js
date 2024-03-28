@@ -5,7 +5,11 @@ require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+  origin: 'https://server-clone-suraj-98fp-git-main-vaibhav-selkars-projects.vercel.app'
+}));
 
 const dbURI = process.env.POSTGRES_URL;
 const client = new Client({

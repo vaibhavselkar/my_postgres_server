@@ -4,8 +4,15 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cors());
+
+
+const corsOptions = {
+  origin: "https://my-postgres-server.vercel.app/quiz1",
+};
+
+
 
 const dbURI = process.env.POSTGRES_URL;
 const client = new Client({

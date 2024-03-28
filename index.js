@@ -7,16 +7,9 @@ const app = express();
 app.use(express.json());
 // app.use(cors());
 
-// Configure cors with specific options
-app.use(
-  cors({
-    origin: "*", // Allow requests from any origin. You can specify specific origins here instead of "*"
-    methods: ["GET", "POST"], // Allow only GET and POST requests
-    allowedHeaders: ["Content-Type"], // Allow only specific headers
-    preflightContinue: false, // Disable preflightContinue to ensure that preflight requests are handled
-    optionsSuccessStatus: 204 // Set the status code for successful OPTIONS requests
-  })
-);
+app.use(cors({
+  origin: 'https://server-clone-suraj-98fp-git-main-vaibhav-selkars-projects.vercel.app'
+}));
 
 const dbURI = process.env.POSTGRES_URL;
 const client = new Client({

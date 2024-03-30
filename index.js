@@ -27,24 +27,24 @@ client.connect()
 
    app.get('/math1', async (req, res) => {
     try {
-      const query = 'SELECT * FROM math1';
+      const query = 'SELECT * FROM math_q1';
       const result = await client.query(query);
-      console.log("Successfully retrieved data from 'math1' table:", result.rows);
+      console.log("Successfully retrieved data from 'math_q1' table:", result.rows);
       res.json(result.rows);
     } catch (error) {
-      console.error("Error retrieving data from 'quiz1' table:", error);
+      console.error("Error retrieving data from 'math_q1' table:", error);
       res.status(500).json({ error: "An error occurred while retrieving data" });
     }
   });
 
   app.get('/english1', async (req, res) => {
     try {
-      const query = 'SELECT * FROM english1';
+      const query = 'SELECT * FROM english_q1';
       const result = await client.query(query);
-      console.log("Successfully retrieved data from 'english1' table:", result.rows);
+      console.log("Successfully retrieved data from 'english_q1' table:", result.rows);
       res.json(result.rows);
     } catch (error) {
-      console.error("Error retrieving data from 'quiz1' table:", error);
+      console.error("Error retrieving data from 'english_q1' table:", error);
       res.status(500).json({ error: "An error occurred while retrieving data" });
     }
   });

@@ -25,11 +25,36 @@ client.connect()
     console.error("Error connecting to PostgreSQL", err);
   });
 
-   app.get('/quiz1', async (req, res) => {
+   app.get('/math1', async (req, res) => {
     try {
-      const query = 'SELECT * FROM quiz1';
+      const query = 'SELECT * FROM math1';
       const result = await client.query(query);
-      console.log("Successfully retrieved data from 'quiz1' table:", result.rows);
+      console.log("Successfully retrieved data from 'math1' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'quiz1' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+  app.get('/english1', async (req, res) => {
+    try {
+      const query = 'SELECT * FROM english1';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'english1' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'quiz1' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+
+  app.get('/scores', async (req, res) => {
+    try {
+      const query = 'SELECT * FROM scores';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'scores' table:", result.rows);
       res.json(result.rows);
     } catch (error) {
       console.error("Error retrieving data from 'quiz1' table:", error);

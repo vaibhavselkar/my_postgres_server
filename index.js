@@ -39,7 +39,7 @@ client.connect()
 
   app.post('/data', async (req, res) => {
   try {
-    const { name, score , Subject} = req.body;
+    const { name, score, Subject } = req.body; // Corrected field name to "Subject"
     const result = await client.query('INSERT INTO scores (name, score, Subject) VALUES ($1, $2, $3)', [name, score, Subject]);
     res.status(201).send('Data inserted successfully');
   } catch (err) {

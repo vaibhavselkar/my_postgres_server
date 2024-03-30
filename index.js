@@ -25,7 +25,7 @@ client.connect()
     console.error("Error connecting to PostgreSQL", err);
   });
 
-   app.get('/math1', async (req, res) => {
+   app.get('/math_q1', async (req, res) => {
     try {
       const query = 'SELECT * FROM math_q1';
       const result = await client.query(query);
@@ -37,7 +37,7 @@ client.connect()
     }
   });
 
-  app.get('/english1', async (req, res) => {
+  app.get('/english_q1', async (req, res) => {
     try {
       const query = 'SELECT * FROM english_q1';
       const result = await client.query(query);

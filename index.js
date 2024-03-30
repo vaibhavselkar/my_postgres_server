@@ -40,7 +40,7 @@ client.connect()
   app.post('/data', async (req, res) => {
   try {
     const { name, score } = req.body;
-    const result = await client.query('INSERT INTO login (name, score, page_name) VALUES ($1, $2, $3)', [name, score, pageName]);
+    const result = await client.query('INSERT INTO login (name, score, Subject) VALUES ($1, $2, $3)', [name, score, Subject]);
     res.status(201).send('Data inserted successfully');
   } catch (err) {
     console.error('Error executing query', err);

@@ -8,11 +8,19 @@
   ],
   "routes": [
     {
-      "src": "/quiz1",
+      "src": "/math_q1",
       "dest": "/index.js"
     },
     { 
       "src": "/data",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/english_q1",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/scores",
       "dest": "/index.js"
     }
   ]

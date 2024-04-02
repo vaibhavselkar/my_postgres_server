@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "*"
+  origin: "http://localhost:5500"
 }));
 
 const dbURI = process.env.POSTGRES_URL;

@@ -22,6 +22,14 @@
     { 
       "src": "/scores",
       "dest": "/index.js"
+    },
+    { 
+      "src": "/prompts",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/writing_response",
+      "dest": "/index.js"
     }
   ]
 }

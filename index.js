@@ -37,6 +37,20 @@ client.connect()
     }
   });
 
+   app.get('/phrasal_verbs', async (req, res) => {
+    try {
+      const query = 'SELECT * FROM phrasal_verbs';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'math_q1' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'math_q1' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+
+
   app.get('/english_q1', async (req, res) => {
     try {
       const query = 'SELECT * FROM english_q1';

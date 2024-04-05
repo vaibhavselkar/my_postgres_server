@@ -30,6 +30,11 @@
     { 
       "src": "/writing_response",
       "dest": "/index.js"
+    },
+    { 
+      "src": "/phrasal_verbs",
+      "dest": "/index.js"
     }
+    
   ]
 }

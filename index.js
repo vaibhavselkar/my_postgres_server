@@ -65,15 +65,31 @@ client.connect()
 
 
   app.get('/scores', async (req, res) => {
-    try {
-      const query = 'SELECT * FROM scores';
-      const result = await client.query(query);
-      console.log("Successfully retrieved data from 'scores' table:", result.rows);
-      res.json(result.rows);
-    } catch (error) {
-      console.error("Error retrieving data from 'quiz1' table:", error);
-      res.status(500).json({ error: "An error occurred while retrieving data" });
-    }
+      try {
+          let query = 'SELECT * FROM scores WHERE 1=1';
+          const { subject, name } = req.query;
+          const values = [];
+
+          // Check if subject query parameter is provided
+          if (subject) {
+              query += ` AND subject = $${values.length + 1}`;
+              values.push(subject);
+          }
+
+          // Check if name query parameter is provided
+          if (name) {
+              query += ` AND name = $${values.length + 1}`;
+              values.push(name);
+          }
+
+          const result = await client.query(query, values);
+
+          console.log("Successfully retrieved data from 'scores' table:", result.rows);
+          res.json(result.rows);
+      } catch (error) {
+          console.error("Error retrieving data from 'scores' table:", error);
+          res.status(500).json({ error: "An error occurred while retrieving data" });
+      }
   });
 
   app.post('/data', async (req, res) => {

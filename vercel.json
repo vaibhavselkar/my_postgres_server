@@ -34,7 +34,22 @@
     { 
       "src": "/phrasal_verbs",
       "dest": "/index.js"
+    },
+    { 
+      "src": "/diagnos-eng-1",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/diagnos-eng-2",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/diagnos-math-1",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/diagnos-math-1",
+      "dest": "/index.js"
     }
-    
   ]
 }

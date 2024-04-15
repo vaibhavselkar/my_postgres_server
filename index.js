@@ -41,15 +41,64 @@ client.connect()
     try {
       const query = 'SELECT * FROM phrasal_verbs';
       const result = await client.query(query);
-      console.log("Successfully retrieved data from 'math_q1' table:", result.rows);
+      console.log("Successfully retrieved data from 'phrasal_verbs' table:", result.rows);
       res.json(result.rows);
     } catch (error) {
-      console.error("Error retrieving data from 'math_q1' table:", error);
+      console.error("Error retrieving data from 'phrasal_verbs' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+   app.get('/diagnos-eng-1', async (req, res) => {
+    try {
+      const query = 'select * from "English_Diagnostic Test For Grade 5-7"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'diagnostic-eng-1' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'diagnostic-eng-1' table:", error);
       res.status(500).json({ error: "An error occurred while retrieving data" });
     }
   });
 
 
+   app.get('/diagnos-eng-2', async (req, res) => {
+    try {
+      const query = 'select * from "English_Diagnostic Test For Grade 8-10"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'diagnos-eng-2' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'diagnos-eng-2' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+
+   app.get('/diagnos-math-1', async (req, res) => {
+    try {
+      const query = 'select * from "Maths_Diagnostic Test For Grade 5-7"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'diagnostic-math-1' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'diagnostic-math-1' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+
+   app.get('/diagnos-math-2', async (req, res) => {
+    try {
+      const query = 'select * from "Maths_Diagnostic Test For Grade 8-10"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'diagnos-math-2' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'diagnos-math-2' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
 
   app.get('/english_q1', async (req, res) => {
     try {

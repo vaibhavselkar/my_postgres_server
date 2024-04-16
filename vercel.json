@@ -50,6 +50,14 @@
     { 
       "src": "/diagnos-math-1",
       "dest": "/index.js"
+    },
+    { 
+      "src": "/prompts-diagnos-1",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/prompts-diagnos-2",
+      "dest": "/index.js"
     }
   ]
 }

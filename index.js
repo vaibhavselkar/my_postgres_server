@@ -100,6 +100,31 @@ client.connect()
     }
   });
 
+  app.get('/prompts-diagnos-1', async (req, res) => {
+    try {
+      const query = 'SELECT * FROM "Writing_Diagnostic Test For Grade 5-7"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'writing_prompts' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'writing_prompts 5-7' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+  app.get('/prompts-diagnos-2', async (req, res) => {
+    try {
+      const query = 'SELECT * FROM "Writing_Diagnostic Test For Grade 8-10"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'writing_prompts 8-10' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'writing_prompts 8-10' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+
   app.get('/english_q1', async (req, res) => {
     try {
       const query = 'SELECT * FROM english_q1';
@@ -166,8 +191,8 @@ client.connect()
 
   app.post('/writing_response', async (req, res) => {
     try {
-      const { username, prompt_id, writing_response } = req.body; // Corrected field name 
-      const result = await client.query('INSERT INTO writing_response (username, prompt_id, writing_response) VALUES ($1, $2, $3)', [username, prompt_id, writing_response]);
+      const { username, prompt_id, class, writing_response } = req.body; // Corrected field name 
+      const result = await client.query('INSERT INTO writing_response (username, prompt_id, class, writing_response) VALUES ($1, $2, $3, $4)', [username, prompt_id, class, writing_response]);
       res.status(201).send('Data inserted successfully');
     } catch (err) {
       console.error('Error executing query', err);

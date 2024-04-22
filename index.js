@@ -168,8 +168,8 @@ client.connect()
 
   app.post('/data', async (req, res) => {
   try {
-    const { name, score, subject } = req.body; // Corrected field name to "Subject"
-    const result = await client.query('INSERT INTO scores (name, score, subject) VALUES ($1, $2, $3)', [name, score, subject]);
+    const { name, score, subject, time_taken } = req.body; // Corrected field name to "Subject"
+    const result = await client.query('INSERT INTO scores (name, score, subject, time_taken) VALUES ($1, $2, $3, $4)', [name, score, subject, time_taken]);
     res.status(201).send('Data inserted successfully');
   } catch (err) {
     console.error('Error executing query', err);

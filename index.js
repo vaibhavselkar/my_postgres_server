@@ -191,8 +191,8 @@ client.connect()
 
   app.post('/writing_response', async (req, res) => {
     try {
-      const { username, prompt_id, std, writing_response } = req.body; // Corrected field name 
-      const result = await client.query('INSERT INTO writing_response (username, prompt_id, std, writing_response) VALUES ($1, $2, $3, $4)', [username, prompt_id, std, writing_response]);
+      const { username, prompt_id, std, writing_response, time } = req.body; // Corrected field name 
+      const result = await client.query('INSERT INTO writing_response (username, prompt_id, std, writing_response, time) VALUES ($1, $2, $3, $4, $5)', [username, prompt_id, std, writing_response, time]);
       res.status(201).send('Data inserted successfully');
     } catch (err) {
       console.error('Error executing query', err);

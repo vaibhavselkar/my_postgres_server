@@ -54,10 +54,23 @@ client.connect()
     try {
       const query = 'select * from "simple_prepositions"';
       const result = await client.query(query);
-      console.log("Successfully retrieved data from 'diagnostic-eng-1' table:", result.rows);
+      console.log("Successfully retrieved data from 'prepositions' table:", result.rows);
       res.json(result.rows);
     } catch (error) {
-      console.error("Error retrieving data from 'diagnostic-eng-1' table:", error);
+      console.error("Error retrieving data from 'prepositions' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+// Reading Comprehension
+  app.get('/rc1', async (req, res) => {
+    try {
+      const query = 'select * from "Rc_trail"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'RC' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'RC' table:", error);
       res.status(500).json({ error: "An error occurred while retrieving data" });
     }
   });

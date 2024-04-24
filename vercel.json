@@ -14,9 +14,57 @@
     { 
       "src": "/data",
       "dest": "/index.js"
-    },
+    }, 
     { 
       "src": "/prepo-simple",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-time",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-place",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-direction",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-agent",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-participle",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-confusion",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-beside",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-on/far",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-between",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-of",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/prepo-phrases",
+      "dest": "/index.js"
+    }, 
+    { 
+      "src": "/vocab5",
       "dest": "/index.js"
     },
     { 
@@ -57,6 +105,10 @@
     },
     { 
       "src": "/diagnos-math-2",
+      "dest": "/index.js"
+    },
+    { 
+      "src": "/diagnos-math-0",
       "dest": "/index.js"
     },
     { 

@@ -65,7 +65,7 @@ client.connect()
 // Reading Comprehension
   app.get('/rc1', async (req, res) => {
     try {
-      const query = 'select * from "Rc_trail"';
+      const query = 'select * from "Rc_trial"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'RC' table:", result.rows);
       res.json(result.rows);

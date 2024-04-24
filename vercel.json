@@ -24,6 +24,10 @@
       "dest": "/index.js"
     },
     { 
+      "src": "/rc1",
+      "dest": "/index.js"
+    },
+    { 
       "src": "/scores",
       "dest": "/index.js"
     },

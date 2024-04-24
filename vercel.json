@@ -16,6 +16,10 @@
       "dest": "/index.js"
     },
     { 
+      "src": "/prepo-simple",
+      "dest": "/index.js"
+    },
+    { 
       "src": "/english_q1",
       "dest": "/index.js"
     },

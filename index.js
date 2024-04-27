@@ -25,6 +25,22 @@ client.connect()
     console.error("Error connecting to PostgreSQL", err);
   });
 
+//reading comprehension
+
+   app.get('/rc2', async (req, res) => {
+    try {
+      const query = 'SELECT * FROM rc2';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'rc table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'rc' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+//math
+
    app.get('/math_q1', async (req, res) => {
     try {
       const query = 'SELECT * FROM math_q1';

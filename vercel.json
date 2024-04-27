@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/rc2",
+      "dest": "/index.js"
+    },
+    {
       "src": "/math_q1",
       "dest": "/index.js"
     },

@@ -413,6 +413,18 @@ client.connect()
     }
   });
 
+// Reading comprehension scores
+  app.post('/rc_score', async (req, res) => {
+    try {
+      const { username, passage, score, time } = req.body; // Corrected field name 
+      const result = await client.query('INSERT INTO writing_response (username, passage, score, time) VALUES ($1, $2, $3, $4)', [username, passage, score, time]);
+      res.status(201).send('Data inserted successfully');
+    } catch (err) {
+      console.error('Error executing query', err);
+      res.status(500).send('Error inserting data');
+    }
+  });
+
   app.post('/writing_response', async (req, res) => {
     try {
       const { username, prompt_id, std, writing_response, time } = req.body; // Corrected field name 

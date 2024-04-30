@@ -92,6 +92,10 @@
       "dest": "/index.js"
     },
     { 
+      "src": "/rc_score",
+      "dest": "/index.js"
+    },
+    { 
       "src": "/phrasal_verbs",
       "dest": "/index.js"
     },

@@ -264,7 +264,7 @@ client.connect()
 //Diagnostic tests
    app.get('/diagnos-eng-1', async (req, res) => {
     try {
-      const query = 'select * from "English_Diagnostic Test For Grade 5-7"';
+      const query = 'select * from "English_Diagnostic Test For Grades 5-7"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'diagnostic-eng-1' table:", result.rows);
       res.json(result.rows);

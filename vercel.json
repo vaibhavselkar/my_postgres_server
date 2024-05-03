@@ -100,6 +100,10 @@
       "dest": "/index.js"
     },
     { 
+      "src": "/diagnos-eng-0",
+      "dest": "/index.js"
+    },
+    { 
       "src": "/diagnos-eng-1",
       "dest": "/index.js"
     },

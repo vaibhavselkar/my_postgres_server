@@ -262,6 +262,18 @@ client.connect()
   });
 
 //Diagnostic tests
+   app.get('/diagnos-eng-0', async (req, res) => {
+    try {
+      const query = 'select * from "English_Diagnostic Test For Grades 1-4"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'diagnostic-eng-0' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'diagnostic-eng-0' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
    app.get('/diagnos-eng-1', async (req, res) => {
     try {
       const query = 'select * from "English_Diagnostic Test For Grades 5-7"';

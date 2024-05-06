@@ -336,6 +336,19 @@ client.connect()
     }
   });
 
+   app.get('/math-negative', async (req, res) => {
+    try {
+      const query = 'select * from "math-negative-sign"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'math-negative-sign' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'math-negative-sign' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
+
   app.get('/prompts-diagnos-1', async (req, res) => {
     try {
       const query = 'SELECT * FROM "Writing_Diagnostic Test For Grade 5-7"';

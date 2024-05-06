@@ -16,6 +16,10 @@
       "dest": "/index.js"
     },
     { 
+      "src": "/math-negative",
+      "dest": "/index.js"
+    },
+    { 
       "src": "/data",
       "dest": "/index.js"
     }, 

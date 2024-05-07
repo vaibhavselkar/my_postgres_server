@@ -124,6 +124,10 @@
       "dest": "/index.js"
     },
     { 
+      "src": "/diagnos-math-without-eng",
+      "dest": "/index.js"
+    },
+    { 
       "src": "/diagnos-math-0",
       "dest": "/index.js"
     },

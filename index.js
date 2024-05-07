@@ -299,6 +299,18 @@ client.connect()
     }
   });
 
+   app.get('/diagnos-math-without-eng', async (req, res) => {
+    try {
+      const query = 'select * from "Maths_test_without_English"';
+      const result = await client.query(query);
+      console.log("Successfully retrieved data from 'diagnostic-math-without-english' table:", result.rows);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving data from 'diagnostic-math-without-english' table:", error);
+      res.status(500).json({ error: "An error occurred while retrieving data" });
+    }
+  });
+
    app.get('/diagnos-math-0', async (req, res) => {
     try {
       const query = 'select * from "Maths_Diagnostic Test For Grades 1-4"';

@@ -338,7 +338,7 @@ client.connect()
 
    app.get('/diagnos-math-2', async (req, res) => {
     try {
-      const query = 'select * from "Maths_Diagnostic Test For Grade 5-7"';
+      const query = 'select * from "Maths_Diagnostic Test For Grade 8-10"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'diagnos-math-2' table:", result.rows);
       res.json(result.rows);

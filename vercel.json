@@ -8,6 +8,30 @@
   ],
   "routes": [
     {
+      "src": "/final_math-1-4",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/final_math-5-7",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/final_math-8-10",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/final_eng-1-4",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/final_eng-5-7",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/final_eng-8-10",
+      "dest": "/index.js"
+    },
+    {
       "src": "/rc2",
       "dest": "/index.js"
     },

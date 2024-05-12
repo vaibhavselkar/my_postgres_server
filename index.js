@@ -29,7 +29,7 @@ client.connect()
 
   app.get('/final_math-1-4', async (req, res) => {
     try {
-      const query = 'SELECT * FROM final_math-1-4';
+      const query = 'SELECT * FROM "final_math-1-4"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'math' table:", result.rows);
       res.json(result.rows);
@@ -41,7 +41,7 @@ client.connect()
 
   app.get('/final_math-5-7', async (req, res) => {
     try {
-      const query = 'SELECT * FROM final_math-5-7';
+      const query = 'SELECT * FROM "final_math-5-7"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'math' table:", result.rows);
       res.json(result.rows);
@@ -53,7 +53,7 @@ client.connect()
 
   app.get('/final_math-8-10', async (req, res) => {
     try {
-      const query = 'SELECT * FROM final_math-8-10';
+      const query = 'SELECT * FROM "final_math-8-10"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'math' table:", result.rows);
       res.json(result.rows);
@@ -65,7 +65,7 @@ client.connect()
 
   app.get('/final_eng-1-4', async (req, res) => {
     try {
-      const query = 'SELECT * FROM final_eng-1-4';
+      const query = 'SELECT * FROM "final_eng-1-4"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'eng table:", result.rows);
       res.json(result.rows);
@@ -78,7 +78,7 @@ client.connect()
 
   app.get('/final_eng-5-7', async (req, res) => {
     try {
-      const query = 'SELECT * FROM final_eng-5-7';
+      const query = 'SELECT * FROM "final_eng-5-7"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'eng' table:", result.rows);
       res.json(result.rows);
@@ -90,7 +90,7 @@ client.connect()
 
   app.get('/final_eng-8-10', async (req, res) => {
     try {
-      const query = 'SELECT * FROM final_eng-8-10';
+      const query = 'SELECT * FROM "final_eng-8-10"';
       const result = await client.query(query);
       console.log("Successfully retrieved data from 'eng' table:", result.rows);
       res.json(result.rows);

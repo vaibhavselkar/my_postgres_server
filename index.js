@@ -44,16 +44,19 @@ client.connect()
   // Admin login
 
   app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    const query = 'SELECT * FROM "Admin login" WHERE email = ? AND password = ?';
-    client.query(query, [email, password], (err, results) => {
-        if (err) throw err;
-        if (results.length > 0) {
-            res.json({ success: true });
-        } else {
-            res.json({ success: false });
-        }
-     });
+      const { email, password } = req.body;
+      const query = 'SELECT * FROM "Admin login" WHERE email = $1 AND password = $2'; // Use $1 and $2 as placeholders
+      client.query(query, [email, password], (err, results) => {
+          if (err) {
+              console.error('Error executing query:', err);
+              return res.status(500).json({ success: false, error: 'Internal Server Error' });
+          }
+          if (results.rows.length > 0) {
+              res.json({ success: true });
+          } else {
+              res.json({ success: false });
+          }
+       });
   });
 
 //Summer School Final Test

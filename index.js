@@ -46,7 +46,7 @@ client.connect()
   app.post('/login', (req, res) => {
     const { email, password } = req.body;
     const query = 'SELECT * FROM "Admin login" WHERE email = ? AND password = ?';
-    db.query(query, [email, password], (err, results) => {
+    client.query(query, [email, password], (err, results) => {
         if (err) throw err;
         if (results.length > 0) {
             res.json({ success: true });

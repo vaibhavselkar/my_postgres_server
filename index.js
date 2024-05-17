@@ -40,6 +40,22 @@ client.connect()
       }
     });
 
+
+  // Admin login
+
+  app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const query = 'SELECT * FROM "Admin login" WHERE email = ? AND password = ?';
+    db.query(query, [email, password], (err, results) => {
+        if (err) throw err;
+        if (results.length > 0) {
+            res.json({ success: true });
+        } else {
+            res.json({ success: false });
+        }
+     });
+  });
+
 //Summer School Final Test
 
     app.get('/final_math-1-4', async (req, res) => {

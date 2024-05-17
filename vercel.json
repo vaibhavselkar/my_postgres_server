@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/login",
+      "dest": "/index.js"
+    },
+    {
       "src": "/final_math-1-4",
       "dest": "/index.js"
     },

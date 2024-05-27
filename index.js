@@ -21,6 +21,11 @@ client.connect()
   .catch((err) => {
     console.error("Error connecting to PostgreSQL", err);
   });
+
+// Import and use the auth routes
+  const authRoutes = require("./routes/jwlAuth");
+  app.use("/api", authRoutes);
+
   //reading comprehension
   
      app.get('/rc2', async (req, res) => {

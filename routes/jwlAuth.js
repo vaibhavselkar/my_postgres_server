@@ -70,4 +70,13 @@ router.post("/login", validinfo, async (req, res) => {
   }
 });
 
+// Middleware to clear authentication token (logout)
+const logout = (req, res) => {
+  res.clearCookie('authToken'); // Clear authentication token cookie
+  res.json({ message: 'Logout successful' });
+};
+
+// Example logout route
+router.get('/logout', logout);
+
 module.exports = router;

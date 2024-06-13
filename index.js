@@ -157,6 +157,18 @@ client.connect()
         res.status(500).json({ error: "An error occurred while retrieving data" });
       }
     });
+
+     app.get('/selecting_questions', async (req, res) => {
+      try {
+        const query = 'SELECT * FROM selecting_questions';
+        const result = await client.query(query);
+        console.log("Successfully retrieved data from 'selecting_questions' table:", result.rows);
+        res.json(result.rows);
+      } catch (error) {
+        console.error("Error retrieving data from 'selecting_questions' table:", error);
+        res.status(500).json({ error: "An error occurred while retrieving data" });
+      }
+    });
   
   // Prepositions
     app.get('/prepo-simple', async (req, res) => {

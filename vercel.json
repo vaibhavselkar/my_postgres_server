@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/selecting_questions",
+      "dest": "/index.js"
+    },
+    {
       "src": "/api/login",
       "dest": "/index.js"
     },

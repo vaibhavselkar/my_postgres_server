@@ -57,6 +57,22 @@ client.connect()
        });
   });
 
+  app.post('/selecting_questions', (req, res) => {
+      const { email, password } = req.body;
+      const query = 'SELECT * FROM "selecting_questions"; // Use $1 and $2 as placeholders
+      client.query(query, [email, password], (err, results) => {
+          if (err) {
+              console.error('Error executing query:', err);
+              return res.status(500).json({ success: false, error: 'Internal Server Error' });
+          }
+          if (results.rows.length > 0) {
+              res.json({ success: true });
+          } else {
+              res.json({ success: false });
+          }
+       });
+  });
+
 //Summer School Final Test
     app.get('/final_math-1-4', async (req, res) => {
       try {
